@@ -1,0 +1,12 @@
+C:\Users\phili\salt\precourseDotNet\TrainingGround\bin\Debug\net6.0\TrainingGround.deps.json
+C:\Users\phili\salt\precourseDotNet\TrainingGround\bin\Debug\net6.0\TrainingGround.dll
+C:\Users\phili\salt\precourseDotNet\TrainingGround\bin\Debug\net6.0\TrainingGround.pdb
+C:\Users\phili\salt\precourseDotNet\TrainingGround\obj\Debug\net6.0\TrainingGround.csproj.AssemblyReference.cache
+C:\Users\phili\salt\precourseDotNet\TrainingGround\obj\Debug\net6.0\TrainingGround.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\phili\salt\precourseDotNet\TrainingGround\obj\Debug\net6.0\TrainingGround.AssemblyInfoInputs.cache
+C:\Users\phili\salt\precourseDotNet\TrainingGround\obj\Debug\net6.0\TrainingGround.AssemblyInfo.cs
+C:\Users\phili\salt\precourseDotNet\TrainingGround\obj\Debug\net6.0\TrainingGround.csproj.CoreCompileInputs.cache
+C:\Users\phili\salt\precourseDotNet\TrainingGround\obj\Debug\net6.0\TrainingGround.dll
+C:\Users\phili\salt\precourseDotNet\TrainingGround\obj\Debug\net6.0\refint\TrainingGround.dll
+C:\Users\phili\salt\precourseDotNet\TrainingGround\obj\Debug\net6.0\TrainingGround.pdb
+C:\Users\phili\salt\precourseDotNet\TrainingGround\obj\Debug\net6.0\ref\TrainingGround.dll

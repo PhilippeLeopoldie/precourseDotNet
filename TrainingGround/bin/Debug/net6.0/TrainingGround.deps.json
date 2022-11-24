@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "TrainingGround/1.0.0": {
+        "runtime": {
+          "TrainingGround.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TrainingGround/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
