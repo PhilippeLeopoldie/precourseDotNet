@@ -31,10 +31,12 @@ public class Person {
 
   private int _birthYear;
   public int birthYear{get; private set;}
-  
+  public Address Address { get; set; }
+
   public double LengthInMeters;
 
   public Person() { }
+  
   public Person(string name){
     this.Name = name;
   
@@ -54,6 +56,7 @@ public class Person {
     return _birthYear=BirthYear;
 
   }
+ 
 }
 
 

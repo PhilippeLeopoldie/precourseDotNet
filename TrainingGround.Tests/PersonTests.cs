@@ -1,4 +1,5 @@
 public class PersonTests{
+
   private Person _person;
   public PersonTests()
   {
@@ -56,35 +57,42 @@ public class PersonTests{
     // assert
     Assert.Equal(30, _person.GetAge(1992, currentYear));
   }
-
   [Fact]
-  public void reference_types_can_be_changed_via_reference()
+  public void an_employee_is_a_person()
   {
-    // Arrange
-    Person a = new Person ("Person A");
-    a.LengthInMeters = 1.95;
-    Person b = a;
-
-    // Acte
-    b.LengthInMeters = 1.96;
-
-    // Assert
-    Assert.Equal(1.96, b.LengthInMeters);
-    Assert.Equal(1.96, a.LengthInMeters);
-  }
-
-  [Fact]
-  public void value_types_cannot_be_chnaged_via_reference()
-  {
-    // arrange
-    double aLengthInMeters = 1.95;
-    double bLengthInMeters = aLengthInMeters;
     // act
-    bLengthInMeters = 1.96;
+    var emp = new Employee();
+    emp.LengthInMeters = 1.95;
 
     // assert
-    Assert.Equal(1.96, bLengthInMeters);
-    Assert.Equal(1.95, aLengthInMeters);
+    Assert.IsType(typeof(Employee), emp);
+    Assert.Equal(1.95, emp.LengthInMeters);
   }
 
+  public void an_employee_has_an_employeeId()
+  {
+    // act
+    var emp = new Employee("Marcus", "234-BDAS");
+
+    // assert
+    Assert.IsType(typeof(Employee), emp);
+    Assert.Equal("Marcus", emp.Name);
+    Assert.Equal("234-BDAS", emp.EmployeeId);
+  }
+[Fact]
+  public void a_person_has_an_address()
+  {
+    // arrange
+    var p = new Person("Philippe");
+
+    // act
+    p.Address = new Address();
+    p.Address.Street = "A street";
+    p.Address.SteeetNo = 23;
+    p.Address.City = "Stockholm";
+
+    // assert
+    Assert.NotNull(p.Address);
+    Assert.IsType(typeof(Address), p.Address);
+  }
 }
