@@ -27,14 +27,31 @@ public class Person {
       
     }
   }*/
-  public string? Name {get; private set;}
-  public int BirthYear;
+  public string Name {get; private set;}
+
+  private int _birthYear;
+  public int birthYear{get; private set;}
+  
   public double LengthInMeters;
 
   public Person() { }
   public Person(string name){
     this.Name = name;
   
+  }
+  
+  public Person(int year){
+    birthYear = year;
+  }
+
+  public int GetAge(int birthYear, int currentYear)
+  {
+    return currentYear - birthYear;
+  }
+
+  public int SetAge(int BirthYear)
+  {
+    return _birthYear=BirthYear;
 
   }
 }
