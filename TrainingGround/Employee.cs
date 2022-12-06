@@ -10,12 +10,12 @@
   public string? EmployeeId { get; private set; }
   public Employee(){}
 
-  public string GetPrintString()
+  public new string GetPrintString()
   {
     // throw new NotImplementedException();
     return @$"{this.Name} ({this.EmployeeId})
-      {this.Address.Street} {this.Address.StreetNo}
-      {this.Address.City}
+      {this.Address?.Street} {this.Address?.StreetNo}
+      {this.Address?.City}
       ";
   }
 }

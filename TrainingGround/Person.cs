@@ -31,6 +31,7 @@ public class Person : IPrintable
   public string? Name {get; private set;}
 
   private int _birthYear;
+  //private int currentYear = 2022;
   public int birthYear{get; private set;}
   public Address? Address { get; set; }
 
@@ -49,7 +50,7 @@ public class Person : IPrintable
     birthYear = year;
   }
 
-  public int GetAge(int birthYear, int currentYear)
+  public int GetAge(int currentYear)
   {
     return currentYear - birthYear;
   }

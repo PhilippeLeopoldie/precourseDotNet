@@ -36,7 +36,7 @@ public class TypesTests {
     var p = new Person(1972);
 
     // act
-    var age = p.GetAge(1972, 2022);
+    var age = p.GetAge(2022);
 
     // assert
     Assert.Equal(50, age);

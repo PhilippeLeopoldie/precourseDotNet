@@ -39,29 +39,29 @@ public class PersonTests{
   public void a_personn_born_1972_is_50_2022()
   {
     // arrange
-    //var p= new Person(1972);
+    var p= new Person(1972);
     
     // assert
-    Assert.Equal(50, _person.GetAge(1972, currentYear));
+    Assert.Equal(50, p.GetAge(2022));
   }
 
   [Fact]
   public void a_personn_born_1982_is_40_2022()
   {
     // Arrange
-    //var p = new Person(1982);
+    var p = new Person(1982);
 
     // Assert
-    Assert.Equal(40, _person.GetAge(1982, currentYear));
+    Assert.Equal(40, p.GetAge(2022));
   }
   [Fact]
   public void a_personn_born_1992_is_30_2022()
   {
     // Arrange
-    //var p = new Person(1992);
+    var p = new Person(1992);
 
     // assert
-    Assert.Equal(30, _person.GetAge(1992, currentYear));
+    Assert.Equal(30, p.GetAge(2022));
   }
   [Fact]
   public void an_employee_is_a_person()
