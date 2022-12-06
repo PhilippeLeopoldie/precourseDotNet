@@ -26,5 +26,31 @@ public class ConditionalTest
     Assert.Equal(AgeCategory.Adult, category);
   }
 
-  
+  [Fact]
+  public void when_50_then_prim_Age()
+  {
+    // arrange
+    var p = new Person(1972);
+
+    // act
+    var category = AgeCalculator.GetAgeCategory(p, 2022);
+
+    // assert
+    Assert.Equal(AgeCategory.Prime, category);
+  }
+
+  [Theory]
+  [InlineData(AgeCategory.Kid,"Under 18 years")]
+  [InlineData(AgeCategory.Adult,"Above 18 years")]
+  [InlineData(AgeCategory.Prime, "exactly 50 - and proud!")]
+  public void should_return_spanAge(AgeCategory category, string expected)
+  {
+    // act
+     var span = AgeCalculator.GetAgeSpan(category);
+
+    // assert
+    Assert.Equal(expected, span);
+  }
+
+
 }

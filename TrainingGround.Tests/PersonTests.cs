@@ -5,7 +5,7 @@ public class PersonTests{
   {
     _person = new Person();
   }
-  private int currentYear = 2022;
+  //private int currentYear = 2022;
 
   public void Print(IPrintable printable)
   {
@@ -74,7 +74,7 @@ public class PersonTests{
     Assert.IsType(typeof(Employee), emp);
     Assert.Equal(1.95, emp.LengthInMeters);
   }
-
+  [Fact]
   public void an_employee_has_an_employeeId()
   {
     // act
