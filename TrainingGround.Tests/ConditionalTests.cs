@@ -5,7 +5,7 @@ public class ConditionalTest
   [Fact]
   public void should_be_kid_when_younger_than_18()
   {
-    // arrange
+    // arrange 
     var p = new Person(2005);
 
     // act
