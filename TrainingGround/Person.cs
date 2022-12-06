@@ -1,4 +1,5 @@
-public class Person {
+public class Person : IPrintable
+ {
   /*public string? name { get; set;}*/
   /*private string? _name;
   public string? Name
@@ -27,15 +28,17 @@ public class Person {
       
     }
   }*/
-  public string Name {get; private set;}
+  public string? Name {get; private set;}
 
   private int _birthYear;
   public int birthYear{get; private set;}
-  public Address Address { get; set; }
+  public Address? Address { get; set; }
 
   public double LengthInMeters;
 
   public Person() { }
+
+  
   
   public Person(string name){
     this.Name = name;
@@ -55,6 +58,13 @@ public class Person {
   {
     return _birthYear=BirthYear;
 
+  }
+  public string GetPrintString()
+  {
+    return @$"{this.Name}
+    {this.birthYear}
+    {this.Address}
+    ";
   }
  
 }
