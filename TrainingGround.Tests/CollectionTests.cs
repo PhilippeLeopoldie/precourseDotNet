@@ -46,5 +46,23 @@ public class CollectionTests
 
   }
 
+  [Fact]
+  public void a_list_of_integers_is_very_flexible()
+  {
+    // arrange
+    var integerList = new List<int>();
+
+    // act
+    integerList.Add(1);
+    integerList.Add(2);
+    integerList.Add(3);
+    integerList.RemoveAt(0);
+
+    // assert
+    Assert.Equal(2, integerList.Count);
+    Assert.Equal(2, integerList[0]);
+    Assert.Equal(3, integerList[1]);
+  }
+
 
 }
