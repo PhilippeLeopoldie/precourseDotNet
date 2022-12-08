@@ -34,6 +34,7 @@ public class Person : IPrintable
   //private int currentYear = 2022;
   public int birthYear{get; private set;}
   public Address? Address { get; set; }
+  public List<Address>? Addresses {get; set;}
 
   public double LengthInMeters;
 

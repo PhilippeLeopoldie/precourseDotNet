@@ -5,10 +5,14 @@
     {
       
       this.EmployeeId = employeeId;
+      this.Addresses = new List<Address>();
     }
 
   public string? EmployeeId { get; private set; }
-  public Employee(){}
+  public Employee(){
+   this.Addresses = new List<Address>();
+  }
+ 
 
   public new string GetPrintString()
   {
@@ -18,4 +22,5 @@
       {this.Address?.City}
       ";
   }
+  
 }
