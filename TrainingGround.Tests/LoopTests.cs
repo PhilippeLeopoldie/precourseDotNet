@@ -56,7 +56,7 @@ public class LoopTests
     }
   }
   [Fact]
-  void for_each_loop_over_adresses()
+  public void for_each_loop_over_adresses()
   {
     // assert
     var emp = new Employee("phil", "my-id");
@@ -74,11 +74,56 @@ public class LoopTests
     Assert.IsType<List<Address>>(emp.Addresses);
     Assert.IsType<Address>(oneAdress);
     }
-
-    
-
   }
 
-  
-  
+  [Fact]
+  public void break_stops_loops()
+  {
+    // arrange
+    var addressList = new List<Address>();
+    addressList.Add(new Address(){ Street = "Street", StreetNo = 1});
+    addressList.Add(new Address(){ Street = "Street", StreetNo = 2});
+    addressList.Add(new Address(){ Street = "Street", StreetNo = 3});
+
+    // act
+    var foundIt= false;
+    foreach(var currentValueInTheLoop in addressList)
+    {
+      if (currentValueInTheLoop.StreetNo == 2)
+      {
+        foundIt = true;
+        break;
+      }
+    }
+    // assert
+    Assert.True(foundIt);
+  }
+
+  [Fact]
+  public void continue_loops_only_for_even_number()
+  {
+    // arrange
+    var addressList = new List<Address>();
+    var i = 0;
+    while(i < 11)
+    {
+      if(i % 2 ==0){
+        i ++;
+        continue;
+      }
+      addressList.Add(new Address(){Street=$" Street of the {i} flowers", StreetNo= i});
+      i ++; 
+    }
+    // act
+    Boolean isEven= false;
+    foreach(var oneAddress in addressList){
+      /*if(oneAddress.StreetNo % 2==0)
+      {
+        isEven = true;
+      }*/
+      isEven=(oneAddress.StreetNo % 2==0)? true:false;
+    }
+    // assert
+    Assert.Equal(false, isEven);
+  }
 }
