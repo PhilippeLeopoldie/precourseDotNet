@@ -67,7 +67,33 @@ public class LinqTests
     // assert
     Assert.Equal(true,allPositive);
   }
+  [Fact]
+  public void filter_poeple_by_name_longer_Than_4()
+  {
+    // arrange
+    var people = new List<Person>
+    {
+      new Person("Aaaron"),
+      new Person("Bea"),
+      new Person("Ceasar"),
+      new Person("Dave")
+
+    };
+
+    // act
+    var allPeopleNameLongerThan4 = people
+    .Where(p => p.Name.Length >4)
+    .ToList();
+
+    // assert
+    Assert.Equal(2, allPeopleNameLongerThan4.Count);
+    Assert.Equal(true, allPeopleNameLongerThan4.Any(p => p.Name=="Aaaron"));
+    Assert.Equal("Aaaron", allPeopleNameLongerThan4.First().Name);
+    Assert.Equal("Ceasar", allPeopleNameLongerThan4[1].Name);
+  }
   
+  
+
 
 
 }
