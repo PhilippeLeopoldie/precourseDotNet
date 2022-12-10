@@ -30,5 +30,44 @@ public class LinqTests
     // assert
     Assert.Equal(4, numbersLargerThan15.Count);
   }
+  [Fact]
+  public void linq_to_find_first()
+  {
+    // arrange
+    var numbers = new List<int> {1, 53, 2, 62, 2, 12, 17, 15, 16};
+
+    // act
+    var firstNumberLargerThan15 = numbers.Find(number => number > 15);
+
+    // assert
+    Assert.Equal(53, firstNumberLargerThan15);
+  }
+  [Fact]
+  public void linq_to_check_if_any_matches()
+  {
+    // arrange
+    var numbers = new List<int> {1, 53, 2, 62, 2, 12, 17, 15, 16};
+
+    // act
+    var anyOver100 = numbers.Any(number => number > 100);
+
+    // assert
+    Assert.Equal(false, anyOver100);
+  }
+
+  [Fact]
+  public void linq_check_if_all_positive()
+  {
+    // arrange
+    var numbers = new List<int> {1, 53, 2, 62, 2, 12, 17, 15, 16};
+
+    // act
+    var allPositive = numbers.All(number => number > 0);
+
+    // assert
+    Assert.Equal(true,allPositive);
+  }
   
+
+
 }
