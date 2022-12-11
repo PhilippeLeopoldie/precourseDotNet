@@ -93,7 +93,7 @@ public class LinqTests
   }
 
   [Fact]
-  public void filter_poeple_by_age_only_names()
+  public void filter_people_by_age_only_names()
   {
     // arrange
     var people = new List<Person> 
@@ -117,9 +117,4 @@ public class LinqTests
     Assert.Equal("Aaaron", allPeopleNameLongerThan4.First());
     Assert.Equal("Ceasar", allPeopleNameLongerThan4[1]);
   }
-  
-  
-
-
-
 }
