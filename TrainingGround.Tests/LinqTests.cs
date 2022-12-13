@@ -102,7 +102,6 @@ public class LinqTests
       new Person("Bea"),
       new Person("Ceasar"),
       new Person("Dave")
-
     };
 
     // act
@@ -116,5 +115,53 @@ public class LinqTests
     Assert.Equal(true, allPeopleNameLongerThan4.Any(p => p =="Aaaron"));
     Assert.Equal("Aaaron", allPeopleNameLongerThan4.First());
     Assert.Equal("Ceasar", allPeopleNameLongerThan4[1]);
+  }
+  [Fact]
+  public void filter_people_by_height_names()
+  {
+    // arrange
+    var a = new Person("Aaaron");
+    a.LengthInMeters = 1.96;
+    var people = new List<Person> 
+    {
+      a,
+      new Person("Bea"),
+      new Person("Ceasar"),
+      new Person("Dave")
+    };
+    // act
+    var namesAndHeight = people
+      .Where(p => p.Name.Length > 4)
+      .Select(p => new { Name = p.Name, Height = p.LengthInMeters})
+      .ToList();
+    // assert
+    Assert.Equal(2, namesAndHeight.Count);
+    Assert.Equal("Aaaron", namesAndHeight[0].Name);
+    Assert.Equal(1.96, namesAndHeight.First().Height);
+  }
+  [Fact]
+  public void filter_people_by_height_name_Query_Syntax()
+  {
+    // arrange
+    var a = new Person("Aaaron");
+    a.LengthInMeters = 1.96;
+    var people = new List<Person>
+    {
+      a,
+      new Person("Bea"),
+      new Person("Ceasar"),
+      new Person("Dave")
+    };
+    // act
+    var query =
+    from p in people 
+    where p.Name.Length >4
+    select new{ Name= p.Name, Height = p.LengthInMeters};
+    var nameAndheight = query.ToList();
+
+    // assert
+    Assert.Equal(2,nameAndheight.Count());
+    Assert.Equal("Aaaron", nameAndheight.First().Name);
+    Assert.Equal(1.96, nameAndheight.First().Height);
   }
 }
