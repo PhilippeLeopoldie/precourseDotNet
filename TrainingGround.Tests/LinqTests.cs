@@ -140,6 +140,43 @@ public class LinqTests
     Assert.Equal(1.96, namesAndHeight.First().Height);
   }
   [Fact]
+  public void number_orderBy_ascending()
+  {
+    // arrange
+    var numberList = new List<int>{1, 53, 2, 62, 2, 12, 17, 15, 16};
+
+    // act
+    var queryOrderByAscending =
+    (from num in numberList
+    orderby num
+    select num)
+    .ToList();
+
+    // assert
+    Assert.Equal(9, queryOrderByAscending.Count());
+    Assert.Equal(62, queryOrderByAscending.Last());
+    Assert.Equal(1, queryOrderByAscending.First());
+  }
+  [Fact]
+  public void number_orderby_descending()
+  {
+    // arrange
+    var numberList = new List<int>{1, 53, 2, 62, 2, 12, 17, 15, 16};
+
+    // act
+    var queryOrderByDescending = 
+    (from num in numberList
+      orderby num descending
+      select num
+    ).ToList();
+    
+    // assert
+    Assert.Equal(9,queryOrderByDescending.Count());
+    Assert.Equal(62, queryOrderByDescending.First());
+    Assert.Equal(1, queryOrderByDescending.Last());
+  }
+
+  [Fact]
   public void filter_people_by_height_name_Query_Syntax()
   {
     // arrange
@@ -154,14 +191,15 @@ public class LinqTests
     };
     // act
     var query =
-    from p in people 
+    (from p in people 
     where p.Name.Length >4
-    select new{ Name= p.Name, Height = p.LengthInMeters};
-    var nameAndheight = query.ToList();
+    select new{ Name= p.Name, Height = p.LengthInMeters})
+    .ToList();
+    //var nameAndheight = query.ToList();
 
     // assert
-    Assert.Equal(2,nameAndheight.Count());
-    Assert.Equal("Aaaron", nameAndheight.First().Name);
-    Assert.Equal(1.96, nameAndheight.First().Height);
+    Assert.Equal(2,query.Count());
+    Assert.Equal("Aaaron", query.First().Name);
+    Assert.Equal(1.96, query.First().Height);
   }
 }
