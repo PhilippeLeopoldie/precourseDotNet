@@ -1,3 +1,5 @@
+using FluentAssertions;
+
 namespace TrainingGround.Tests;
 
 public class AgeCalculatorTests
@@ -15,7 +17,9 @@ public class AgeCalculatorTests
         var age= _calculator.GetAge(1972, 2022);
 
         // assert
-        Assert.Equal(50, age);
+        Assert.Equal(50, age);// before
+        age.Should().Be(50);// then using FluentAssertions;
+        
     }
 
     [Fact]
@@ -26,5 +30,6 @@ public class AgeCalculatorTests
 
         // Assert
         Assert.Equal(0, age);
+       
     }
 }

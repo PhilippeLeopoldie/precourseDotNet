@@ -53,7 +53,12 @@ public class Person : IPrintable
 
   public int GetAge(int currentYear)
   {
-    return currentYear - birthYear;
+      var age = currentYear - birthYear;
+      if (age < 0)
+      {
+        throw new Exception("Not born yet");
+      }
+      return age;
   }
 
   public int SetAge(int BirthYear)
