@@ -1,2 +1,2 @@
 # precourseDotNet
-Following the SALT pretrainng courses for .Net Bootcamp
+Following the SALT pretraining courses for .Net Bootcamp
